@@ -2,6 +2,9 @@
 
 Kevin Muñoz
 
+# APK
+[APK](android/app/build/outputs/apk/debug)
+
 Registrar un recibo
 
 <img width="460" height="428" alt="image" src="https://github.com/user-attachments/assets/2c3d7d12-c5d1-45f5-84ff-10616dd87125" />
