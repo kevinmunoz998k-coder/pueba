@@ -1,17 +1,41 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Registrar Gasto
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <form (ngSubmit)="saveExpense()" #expenseForm="ngForm">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Monto</ion-label>
+        <ion-input type="number" [(ngModel)]="expense.amount" name="amount" required></ion-input>
+      </ion-item>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+      <ion-item>
+        <ion-label position="stacked">Descripción</ion-label>
+        <ion-input type="text" [(ngModel)]="expense.description" name="description" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-button expand="block" (click)="takePicture()">
+          <ion-icon name="camera-outline" slot="start"></ion-icon>
+          Tomar Foto del Recibo
+        </ion-button>
+      </ion-item>
+
+      <ion-item *ngIf="expense.photoPath">
+        <ion-thumbnail slot="start">
+          <ion-img [src]="expense.photoPath"></ion-img>
+        </ion-thumbnail>
+        <ion-label>Foto capturada</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" type="submit" [disabled]="!expenseForm.valid">
+      Guardar Gasto
+    </ion-button>
+  </form>
 </ion-content>

@@ -1,17 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Galería de Recibos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let expense of expenses">
+        <ion-card *ngIf="expense.photoPath" (click)="showReceiptDetail(expense)">
+          <ion-img [src]="expense.photoPath"></ion-img>
+          <ion-card-header>
+            <ion-card-subtitle>{{ expense.date | date:'shortDate' }}</ion-card-subtitle>
+            <ion-card-title>{{ expense.amount | currency }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ expense.description }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-text color="medium" class="ion-text-center ion-padding" *ngIf="!hasReceipts">
+    <h2>No hay recibos guardados</h2>
+    <p>Los recibos que fotografíes aparecerán aquí</p>
+  </ion-text>
 </ion-content>
