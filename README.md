@@ -3,6 +3,9 @@
 Kevin Muñoz
 
 # APK
+
+Para visualizar el apk ir a:
+
 [APK](android/app/build/outputs/apk/debug)
 
 Registrar un recibo
