@@ -4,11 +4,11 @@ Kevin Muñoz
 
 # APK
 
-Para visualizar el apk ir a:
+Para probar el apk ir a:
 
 [APK](android/app/build/outputs/apk/debug)
 
-Registrar un recibo
+Registrar un recibo: Para este caso primero se pone el monto y luego una descripción, luego se procede a pedir los respectivos permisos para abrir la cámara, finalmente se toma la foto y se procede a visualizar un preview del contenido (La cámara estaba oculta por lo que se muestra en negro la foto en la siguiente imagen)
 
 <img width="460" height="428" alt="image" src="https://github.com/user-attachments/assets/2c3d7d12-c5d1-45f5-84ff-10616dd87125" />
 
